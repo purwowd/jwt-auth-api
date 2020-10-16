@@ -1,2 +1,2 @@
 # jwt-auth-api
-JWT Authentication with Django
+JSON Web Token Authentication with Django
