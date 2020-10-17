@@ -1,0 +1,8 @@
+# External package folder
+.vscode/
+venv
+src/tmp/db.sqlite3
+
+# Python cache
+*.py[oc]
+__pycache__/
