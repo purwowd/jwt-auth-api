@@ -2,7 +2,7 @@
 .vscode/
 venv
 src/tmp/db.sqlite3
-src/media/photos/photo_*
+#src/media/photos/photo_*
 
 # Python cache
 *.py[oc]
