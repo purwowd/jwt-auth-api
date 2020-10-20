@@ -5,6 +5,10 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /requirements.txt
 RUN apk update
+RUN apk --update add \
+    build-base \
+    jpeg-dev \
+    zlib-dev
 RUN apk add --no-cache --virtual .tmp-build-deps gcc libc-dev linux-headers musl-dev zlib zlib-dev jpeg-dev
 RUN pip install -r /requirements.txt
 RUN apk del .tmp-build-deps
