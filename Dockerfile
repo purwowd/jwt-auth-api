@@ -9,7 +9,10 @@ RUN apk --update add \
     build-base \
     jpeg-dev \
     zlib-dev
-RUN apk add --no-cache --virtual .tmp-build-deps gcc libc-dev linux-headers musl-dev zlib zlib-dev jpeg-dev
+RUN apk add --no-cache postgresql-client
+RUN apk add --no-cache --virtual .tmp-build-deps \
+    gcc libc-dev linux-headers musl-dev \
+    zlib zlib-dev jpeg-dev postgresql-dev
 RUN pip install -r /requirements.txt
 RUN apk del .tmp-build-deps
 

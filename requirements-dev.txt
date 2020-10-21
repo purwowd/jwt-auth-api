@@ -3,4 +3,3 @@ djangorestframework
 djangorestframework-simplejwt
 Pillow
 flake8
-psycopg2
