@@ -10,9 +10,9 @@ from io import BytesIO
 from PIL import Image
 
 
-CREATE_USER_URL = reverse('users:create')
-JWT_URL = reverse('users:token')
-PROFILE_URL = reverse('users:me')
+CREATE_USER_URL = reverse('users:register')
+JWT_URL = reverse('users:login')
+PROFILE_URL = reverse('users:profile')
 
 
 def create_user(**params):

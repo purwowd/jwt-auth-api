@@ -7,8 +7,8 @@ from users import views
 app_name = 'users'
 
 urlpatterns = [
-    path('create/', views.CreateUserView.as_view(), name='create'),
-    path('me/', views.ManageUserView.as_view(), name='me'),
-    path('token/', views.CreateTokenJwtUserView.as_view(), name='token'),
+    path('register/', views.CreateUserView.as_view(), name='register'),
+    path('profile/', views.ManageUserView.as_view(), name='profile'),
+    path('login/', views.CreateTokenJwtUserView.as_view(), name='login'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
