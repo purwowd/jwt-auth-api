@@ -4,6 +4,8 @@ exclude =
     __pycache__,
     manage.py,
     settings.py,
+    devs.py,
+    prods.py,
     venv,
 extend-ignore = 
     F403
