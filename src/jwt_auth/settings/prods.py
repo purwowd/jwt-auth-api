@@ -2,6 +2,9 @@ import os
 from .devs import *
 
 
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -13,5 +16,6 @@ DATABASES = {
 }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MEDIA_ROOT = '/vol/web/media'
 STATIC_ROOT = '/vol/web/static'

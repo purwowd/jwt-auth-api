@@ -4,10 +4,12 @@ services:
     jwt-auth-api:
         build: 
             context: .
-        ports: 
-            - '8000:8000'
+        expose: 
+            - '8000'
         volumes: 
             - ./src:/src
+            - static_volume:/vol/web/static
+            - media_volume:/vol/web/media
         command: >
             sh -c 'python manage.py test --settings=jwt_auth.settings.prods && flake8 &&
                    python manage.py migrate --settings=jwt_auth.settings.prods &&
@@ -27,3 +29,17 @@ services:
             - POSTGRES_DB=app1
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=secret
+
+    nginx:
+        build: ./nginx
+        volumes: 
+            - static_volume:/vol/web/static
+            - media_volume:/vol/web/media
+        ports: 
+            - '80:80'
+        depends_on: 
+            - jwt-auth-api
+
+volumes: 
+    static_volume:
+    media_volume:
