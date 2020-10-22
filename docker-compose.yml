@@ -12,7 +12,7 @@ services:
             sh -c 'python manage.py test --settings=jwt_auth.settings.prods && flake8 &&
                    python manage.py migrate --settings=jwt_auth.settings.prods &&
                    python manage.py wait_for_db --settings=jwt_auth.settings.prods &&
-                   python manage.py runserver 0.0.0.0:8000 --settings=jwt_auth.settings.prods'
+                   gunicorn --env DJANGO_SETTINGS_MODULE=jwt_auth.settings.prods jwt_auth.wsgi:application --bind 0.0.0.0:8000'
         environment: 
             - DB_HOST=db
             - DB_NAME=app1

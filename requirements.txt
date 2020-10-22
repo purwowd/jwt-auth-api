@@ -4,3 +4,5 @@ djangorestframework-simplejwt
 Pillow
 flake8
 psycopg2
+gunicorn
+whitenoise
