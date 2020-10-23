@@ -28,6 +28,7 @@ JSON Web Token Authentication with Django
   ```bash
   $ viertualenv -p python3 venv
   $ source venv/bin/activate
+  (venv)$ pip install -r requirements-dev.txt
   (venv)$ ./manage.py runserver --settings=jwt_auth.settings.devs
   ```
 
